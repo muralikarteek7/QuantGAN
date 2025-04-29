@@ -96,7 +96,8 @@ class TsDataset(Dataset):
             idx = idx.tolist()
 
         if torch.is_tensor(values):
-            values = values.data.numpy()
+            values = values.detach().cpu().numpy()
+
 
         for i in range(0, len(idx)):
             self.Data[2][idx[i]] = values[i, 0, :]

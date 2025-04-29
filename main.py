@@ -168,7 +168,9 @@ def main():
             # Intuition: The entire subsequence should be given a label of 1.
 
             #label = torch.full((batch_size, num_channels, seq_len), real_label, device=device)
-            label = torch.full((batch_size, num_channels, 1), real_label, device=device)
+            #label = torch.full((batch_size, num_channels, 1), real_label, device=device)
+            label = torch.full((batch_size, num_channels), real_label, device=device)
+
 
             label = label.double()
             real = real.double()
